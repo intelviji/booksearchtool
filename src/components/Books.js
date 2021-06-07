@@ -19,7 +19,7 @@ class Books extends Component {
     e.preventDefault();
     this.setState({ loading: true });
     const apiUrl =
-      "http://openlibrary.org/search.json?q=" + this.state.userInput;
+      "https://openlibrary.org/search.json?q=" + this.state.userInput;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -32,7 +32,7 @@ class Books extends Component {
     this.setState({ userInput: event.target.value });
   };
   formatData = (data) => {
-    const imgurl = "http://covers.openlibrary.org/b/olid/";
+    const imgurl = "https://covers.openlibrary.org/b/olid/";
     const default_image = "https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg";
     const formattedData = data.map((book) => {
       //A place to verify the property publish date and if it is not available in api then set default value as zeros.

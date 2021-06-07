@@ -25,7 +25,7 @@ class Books extends Component {
       .then((data) => {
         const formattedBooks = this.formatData(data.docs);
         this.setState({ books:formattedBooks, loading: false });
-        console.log(this.state.books);
+        //console.log(this.state.books);
       });
   };
   handleUserinput = (event) => {

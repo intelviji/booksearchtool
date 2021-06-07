@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from "react";
-
+import PublishedDate from './PublishedDate';
 const SearchList = (props) => {
   //const [imgurl, setImgurl] = useState([]);
-
-  var imgurl = "http://covers.openlibrary.org/b/olid/";
   const data = props.allbooks;
+  console.log("data= ", data);
   const ListItems = data.map((item) => (
+   // console.log("item",item);
     <li key={item.key}>
-      <img src={imgurl + item.cover_edition_key + "-M.jpg"} alt={item.title} />
+      <img src={item.imagelink.medium} alt={item.title} />
       <div className="content-area">
         <h2> {item.title} </h2>
-        <span className="author-name">{item.author_name} </span>
+        <span className="author-name">Author:{item.author_name} </span>
+         <p>Published Date: {item.latest_publish_date}</p>
+       
       </div>
     </li>
   ));
   return (
     <div className="searchLists">
-      <ul>{ListItems}</ul>
+      <ul className={props.viewClass}>
+        {ListItems}</ul>
     </div>
   );
 };

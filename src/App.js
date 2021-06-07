@@ -26,7 +26,6 @@ function App() {
     <Profiler id="Books" onRender={mycallback}>
       <Books />
     </Profiler>
-      
     </div>
   );
 }

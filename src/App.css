@@ -2,6 +2,8 @@
 :root{
   --book-blue-color: #1da2bc;
   --book-gray-color: #3a3a3a;
+  --book-button-color:#f2c744;
+  --book-text-color:rgba(57,63,79,var(--text-opacity));
 }
 
 
@@ -42,20 +44,63 @@ div.loading{
 .SearchArea{
   text-align: center;
 }
-
+input[type="text"]{
+  -moz-border-radius: 20px;
+ border-radius: 20px;
+    border:solid 1px var(--book-blue-color); 
+    padding:5px;
+    width:40%;
+    height:2rem;
+   font-size:22px;
+}
+input:focus{
+  outline-width: 0;
+}
+/* Common button CSS */
+.btn{
+margin: .5rem;
+background-color:var(--book-button-color);
+border-radius: 9999px;
+text-transform: uppercase;
+font-weight: 600;
+letter-spacing: 1px;
+--text-opacity: 1;
+color: var(--book-text-color);
+padding: 1rem 2rem;
+transition-timing-function: cubic-bezier(.4,0,.2,1);
+transition-duration: .15s;
+border-width:0px;
+cursor: pointer;
+}
+.btn:hover{
+  color:#fff;
+  background-color: var(--book-blue-color);
+}
 
 /* Seach List Display CSS goes here */
-.searchLists ul{
+.searchLists ul.list{
   display:flex;
   flex-direction: column;
+}
+.searchLists ul.grid{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
 }
  .searchLists ul li {
    list-style-type: none;
    font-family:Georgia, 'Times New Roman', Times, serif;
+   margin-bottom:1rem;
+   box-shadow: 2px 2px 2px 3px #888888;
+   padding:1rem;
+   margin:2rem;
  }
  .searchLists ul li img{
    float:left;
  }
+ .searchLists ul.grid li img{
+  float:none;
+}
 .author-name {
   color:var(--author-gray-color);
 }
@@ -63,8 +108,17 @@ div.loading{
 {
   display:flex;
   flex-direction: column;
+  padding-left:0.5rem;
 }
-.input__container{
-  border:1px solid var(--book-blue-color);
-  
+
+/* ListView Grid View Icon CSS */
+.iconRender{
+  float:right;
+  margin-right:10%;
+  cursor: pointer;
+  margin-top:-2rem;
+}
+select {
+  height:2rem;
+  margin-right:0.5rem;  
 }

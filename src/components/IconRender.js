@@ -1,9 +1,9 @@
 import React from 'react';
 export function ListRender(props) {
-    return (<i className="fas fa-list-ul fa-2x viewIcon" onClick={props.handleView}></i>);
+    return (<i aria-label="View Change Icon" className="fas fa-list-ul fa-2x viewIcon" onClick={props.handleView}></i>);
   }
   export function GridRender(props) {
-    return ( <i className="fas fa-grip-horizontal fa-2x viewIcon" onClick={props.handleView}></i>);
+    return ( <i aria-label="View Change Icon" className="fas fa-grip-horizontal fa-2x viewIcon" onClick={props.handleView}></i>);
   }
 const IconRender = (props) =>{
     const isList = props.isList;
